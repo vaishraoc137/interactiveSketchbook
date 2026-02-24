@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Project Ideas</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff); /* baby pink → soft purple */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #5a2d82; /* deep purple */
+        margin-bottom: 50px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .idea {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px 25px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 800px;
+        width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .idea:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(123, 63, 160, 0.25);
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #7b3fa0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #5a2d82;
+    }
+
+    a.nav-link {
+        margin-top: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+
+    /* Image styling */
+    .idea img {
+        max-width: 100%;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.1);
+    }
+</style>
+
+</head>
+<body>
+
+<h1>Micro-Project Sketches</h1>
+
+<div class="idea">
+    <h2>Uneven Bloom</h2>
+
+    <!-- Images added -->
+    <img src="img/systemdiagram.jpg" alt="System Diagram">
+    <img src="img/stage1.jpg" alt="Flower Stage 1">
+    <img src="img/stage2.jpg" alt="Flower Stage 2">
+    <img src="img/stage3.jpg" alt="Flower Stage 3">
+    <img src="img/stage4.jpg" alt="Flower Stage 4">
+    <img src="img/stage5.jpg" alt="Flower Stage 5">
+
+    <p><span class="label">The primary input(s):</span> User Clicks (sunlight)</p>
+    <p><span class="label">The system state(s):</span> Each flower has its own internal states<br>
+        Flower A (Steady Growth)<br>
+        Flower B (Uneven/Random Growth)</p>
+    <p><span class="label">Where time affects behavior:</span> Flower B stalls and builds up to the delay in the growth</p>
+    <p><span class="label">Where does friction appear:</span> Flower B sometimes ignores a click. Growth is paused in Flower B at times.</p>
+    <p><span class="label">What is the core rule of this system?</span> Each click provides equal nurturing input to both flowers, but growth outcomes are not equal. One flower responds predictably. The other responds irregularly. Equal care does not guarantee equal blooming.</p>
+    <p><span class="label">What changes over time?</span> Petal count, Stem height, Bloom size, Symmetry, Response speed to input</p>
+    <p><span class="label">Where does the system become uneven?</span> The unevenness appears when Flower B ignores or delays growth despite identical clicks. The friction is emotional: the user expects fairness. The system denies it. Over time, this gap widens.</p>
+    <p><span class="label">Why is this idea worth developing further?</span> Instead of a reward system, it becomes a reflection of growth, comparison, and uneven development. It creates subtle tension without conflict. It invites users to reflect on the nature of growth and fairness in a non-judgmental way.</p>
+</div>
+
+<!-- Navigation back to main sketchbook -->
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+
+</body>
+</html>
