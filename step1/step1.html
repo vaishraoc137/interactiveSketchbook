@@ -3,17 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Micro-Project Step 1</title>
+<title>Micro-Project Step 2</title>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
 
 <style>
     body {
         margin: 0;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: linear-gradient(135deg, #ffd6ec, #e6ccff); /* baby pink → soft purple */
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -23,7 +21,7 @@
 
     h1 {
         font-size: 42px;
-        color: #5a2d82; /* deep purple */
+        color: #5a2d82;
         margin-bottom: 50px;
         text-align: center;
         letter-spacing: 1px;
@@ -80,25 +78,52 @@
         background-color: #f3e6ff;
     }
 
-    /* Image styling */
-    .idea img {
-        max-width: 100%;
-        border-radius: 15px;
-        margin-bottom: 20px;
-        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.1);
+    canvas {
+        margin-bottom: 40px;
     }
 </style>
 
 </head>
 <body>
 
-<h1>Micro-Project Step 1</h1>
+<h1>Micro-Project Progress Report #2</h1>
 
+<script src="js/step1.js"></script>
 
-<!-- Navigation back to main sketchbook -->
+<!-- Section 1 -->
+<div class="idea">
+    <h2>1. Current Build</h2>
+    <p>
+        The system begins with two small brown seeds planted in the ground. 
+        When the user clicks, both seeds grow upward into flowers. 
+        One flower grows at a steady, fixed rate, while the other grows unpredictably using random values. 
+        The main variable controlling the system is height. 
+        As the height increases, visible state change occurs as stems extend and pink blossoms appear once they reach maximum growth.
+    </p>
+</div>
+
+<!-- Section 2 -->
+<div class="idea">
+    <h2>2. Where Is the Pressure?</h2>
+    <p>
+        Pressure in the system is accumulative and interaction-based. 
+        Each click adds growth, pushing both flowers closer to their maximum height. 
+        The tension comes from the difference in pacing — the steady flower progresses predictably, while the random flower may surge ahead or lag behind. 
+        The contrast creates a visual imbalance that builds over time.
+    </p>
+</div>
+
+<!-- Section 3 -->
+<div class="idea">
+    <h2>3. One Structural Addition This Week</h2>
+    <p>
+        This week, I added a new visual element to represent growth stages. 
+        As the flowers grow, they now change color from brown to green for the stem and from pink to a deeper magenta for the blossoms. 
+        This addition provides clearer feedback on the growth process and enhances the visual appeal of the system.
+    </p>
+</div>
+
 <a href="../index.html" class="nav-link">Back to Sketchbook</a>
-
- <script src="js/step1.js"></script>
 
 </body>
 </html>
