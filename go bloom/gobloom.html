@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Project Step 2</title>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #5a2d82;
+        margin-bottom: 50px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .idea {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px 25px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 800px;
+        width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .idea:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(123, 63, 160, 0.25);
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #7b3fa0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #5a2d82;
+    }
+
+    a.nav-link {
+        margin-top: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+
+    canvas {
+        margin-bottom: 40px;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>Micro-Project Progress Report #2</h1>
+
+<script src="js/gobloom.js"></script>
+
+<div class="idea">
+    <h2>1. Current Build</h2>
+    <p>
+        The system begins with two small brown seeds planted in the ground. 
+        When the user clicks, both seeds grow upward into flowers. 
+        One flower grows at a steady, fixed rate, while the other grows unpredictably using random values. 
+        The main variable controlling the system is height. 
+        As the height increases, visible state change occurs as stems extend and pink blossoms appear once they reach maximum growth.
+    </p>
+</div>
+
+<div class="idea">
+    <h2>2. Where Is the Pressure?</h2>
+    <p>
+        Pressure in the system is accumulative. 
+        Each click adds growth, pushing both flowers closer to their maximum height. 
+        The tension comes from the difference in pacing. The steady flower progresses predictably, while the random flower may surge ahead or lag behind. 
+        The contrast creates a visual imbalance that builds over time.
+    </p>
+</div>
+
+
+<div class="idea">
+    <h2>3. One Structural Addition This Week.</h2>
+    <p>
+        This week, I added a new visual element to represent growth stages. 
+        As the flowers grow, they now change color from brown to green for the stem and pink for the blossoms. 
+        This addition provides clearer feedback on the growth process and enhances the visual appeal of the system.
+    </p>
+</div>
+
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+
+</body>
+</html>
