@@ -103,7 +103,7 @@
         <span class="label">Multiple structural states:</span> The system moves through a waiting state 
         (press any key), an active round state (sun moving, seeds clickable), and either a round-end 
         state (reset and advance) or a game over state.<br><br>
-        <span class="label">Meaningful interaction:</span> Every click is a risk — the player does not 
+        <span class="label">Meaningful interaction:</span> Every click is a risk. The player does not 
         know if a seed will become a flower or a weed until they click it. Clicking all seeds is required 
         to survive, but weeds cost points, so the score reflects the quality of each run.<br><br>
         <span class="label">Visible evolution over time:</span> Every two rounds an extra seed is added 
@@ -116,7 +116,7 @@
     <h2>2. Process Documentation</h2>
     <p>
         <span class="label">Iterative development:</span> The system started as two fixed seeds that 
-        grew when the user pressed a key — one at a steady rate, one at a random rate. Over several 
+        grew when the user pressed a key: one at a steady rate, one at a random rate. Over several 
         iterations it was rebuilt into a click-based game with a scoring system, lives, and a moving 
         sun timer.<br><br>
         <span class="label">Structural changes over time:</span> The original height variable driving 
@@ -126,7 +126,7 @@
         flowers simultaneously. This was replaced with mousePressed() and dist() hit detection so each 
         seed could be clicked individually.<br><br>
         <span class="label">Reflections on rule changes:</span> The original lose condition was only 
-        failing to grow a flower — weeds did not count against survival. This was changed so that any 
+        failing to grow a flower  weeds did not count against survival. This was changed so that any 
         unclicked seed costs a life, which made every seed feel important rather than optional.<br><br>
         <span class="label">Evidence of revision:</span> The timer started fixed at 12 seconds, was 
         later made variable per round, then locked back to 10 seconds with a -0.5s reduction per round 
