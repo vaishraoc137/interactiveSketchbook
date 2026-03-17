@@ -86,42 +86,67 @@
 </head>
 <body>
 
-<h1>Micro-Project Progress Report #2</h1>
-
+<h1>GoBloom — Progress Report #3</h1>
+ 
 <script src="js/gobloom.js"></script>
-
+ 
 <div class="idea">
-    <h2>1. Current Build</h2>
+    <h2>1. Working Interactive System</h2>
     <p>
-        The system begins with two small brown seeds planted in the ground. 
-        When the user clicks, both seeds grow upward into flowers. 
-        One flower grows at a steady, fixed rate, while the other grows unpredictably using random values. 
-        The main variable controlling the system is height. 
-        As the height increases, visible state change occurs as stems extend and pink blossoms appear once they reach maximum growth.
+        The system is a timed gardening game. Five seeds appear on the ground and the player must click 
+        every seed before the sun crosses the sky in 10 seconds. Each seed randomly grows into either 
+        a flower (+25 points) or a weed (-10 points). If any seed is left unclicked when the sun sets, 
+        the player loses a life. The game ends when all three lives are gone.
+    </p>
+    <p><br>
+        <span class="label">Core rule:</span> Click every seed before the sun sets or lose a life.<br><br>
+        <span class="label">Multiple structural states:</span> The system moves through a waiting state 
+        (press any key), an active round state (sun moving, seeds clickable), and either a round-end 
+        state (reset and advance) or a game over state.<br><br>
+        <span class="label">Meaningful interaction:</span> Every click is a risk — the player does not 
+        know if a seed will become a flower or a weed until they click it. Clicking all seeds is required 
+        to survive, but weeds cost points, so the score reflects the quality of each run.<br><br>
+        <span class="label">Visible evolution over time:</span> Every two rounds an extra seed is added 
+        to the ground, and every round the timer shrinks by half a second. The garden gets harder to 
+        manage the longer the player survives.
     </p>
 </div>
-
+ 
 <div class="idea">
-    <h2>2. Where Is the Pressure?</h2>
+    <h2>2. Process Documentation</h2>
     <p>
-        Pressure in the system is accumulative. 
-        Each click adds growth, pushing both flowers closer to their maximum height. 
-        The tension comes from the difference in pacing. The steady flower progresses predictably, while the random flower may surge ahead or lag behind. 
-        The contrast creates a visual imbalance that builds over time.
+        <span class="label">Iterative development:</span> The system started as two fixed seeds that 
+        grew when the user pressed a key — one at a steady rate, one at a random rate. Over several 
+        iterations it was rebuilt into a click-based game with a scoring system, lives, and a moving 
+        sun timer.<br><br>
+        <span class="label">Structural changes over time:</span> The original height variable driving 
+        growth was replaced by an array of seed objects, each tracking its own clicked state. Plants 
+        became a separate array with a type property (flower or weed) assigned at the moment of clicking.<br><br>
+        <span class="label">Code experiments:</span> An early version used keyPressed() to grow both 
+        flowers simultaneously. This was replaced with mousePressed() and dist() hit detection so each 
+        seed could be clicked individually.<br><br>
+        <span class="label">Reflections on rule changes:</span> The original lose condition was only 
+        failing to grow a flower — weeds did not count against survival. This was changed so that any 
+        unclicked seed costs a life, which made every seed feel important rather than optional.<br><br>
+        <span class="label">Evidence of revision:</span> The timer started fixed at 12 seconds, was 
+        later made variable per round, then locked back to 10 seconds with a -0.5s reduction per round 
+        after feedback that the difficulty curve felt uneven. The number of seeds also increases every 
+        two rounds to compound the pressure gradually.
     </p>
 </div>
-
-
+ 
 <div class="idea">
-    <h2>3. One Structural Addition This Week.</h2>
+    <h2>3. What the System Is About</h2>
     <p>
-        This week, I added a new visual element to represent growth stages. 
-        As the flowers grow, they now change color from brown to green for the stem and pink for the blossoms. 
-        This addition provides clearer feedback on the growth process and enhances the visual appeal of the system.
+        The system uses a garden as a metaphor for decision-making under pressure. Every seed is an 
+        unknown — the player cannot tell what will grow until they commit to clicking it. The sun is 
+        indifferent; it moves at the same pace regardless of what the player does. The only control 
+        the player has is how quickly they act, not what the outcome will be. As rounds progress, 
+        more seeds appear and less time is available, so the player has to make faster decisions 
+        with the same uncertainty.
     </p>
 </div>
-
+ 
 <a href="../index.html" class="nav-link">Back to Sketchbook</a>
-
 </body>
 </html>
