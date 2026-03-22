@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Micro-Project Step 2</title>
+
+<script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #5a2d82;
+        margin-bottom: 50px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .idea {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 30px 25px;
+        margin-bottom: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 800px;
+        width: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .idea:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(123, 63, 160, 0.25);
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+        color: #7b3fa0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 5px 0;
+    }
+
+    .label {
+        font-weight: bold;
+        color: #5a2d82;
+    }
+
+    a.nav-link {
+        margin-top: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+
+    canvas {
+        margin-bottom: 40px;
+    }
+</style>
+
+</head>
+<body>
+
+<h1>GoBloom — Progress Report #3</h1>
+ 
+<script src="js/gobloomfinal.js"></script>
+ 
+<div class="idea">
+    <h2>1. Working Interactive System</h2>
+    <p>
+        The system is a timed gardening game. Five seeds appear on the ground and the player must click 
+        every seed before the sun crosses the sky in 10 seconds. Each seed randomly grows into either 
+        a flower (+25 points) or a weed (-10 points). If any seed is left unclicked when the sun sets, 
+        the player loses a life. The game ends when all three lives are gone.
+    </p>
+    <p><br>
+        <span class="label">Core rule:</span> Click every seed before the sun sets or lose a life.<br><br>
+        <span class="label">Multiple structural states:</span> The system moves through a waiting state 
+        (press any key), an active state (sun moving, seeds clickable), and either a end 
+        state (reset and advance) or a game over state.<br><br>
+        <span class="label">Meaningful interaction:</span> Every click is a risk. The player does not 
+        know if a seed will become a flower or a weed until they click it. Clicking all seeds is required 
+        to survive, but weeds cost points, so the score reflects the quality of each run.<br><br>
+        <span class="label">Visible evolution over time:</span> Every two rounds an extra seed is added 
+        to the ground, and every round the timer shrinks by half a second. The garden gets harder to 
+        manage the longer the player survives.
+    </p>
+</div>
+ 
+<div class="idea">
+    <h2>2. Process Documentation</h2>
+    <p>
+        <span class="label">Iterative development:</span> The system started as two fixed seeds that 
+        grew when the user pressed a key: one at a steady rate, one at a random rate. Over several 
+        iterations it was rebuilt into a click-based game with a scoring system, lives, and a moving 
+        sun timer.<br><br>
+        <span class="label">Structural changes over time:</span> The original height variable driving 
+        growth was replaced by an array of seed objects, each tracking its own clicked state. Plants 
+        became a separate array with a type property (flower or weed) assigned at the moment of clicking.<br><br>
+        <span class="label">Code experiments:</span> An early version used keyPressed() to grow both 
+        flowers simultaneously. This was replaced with mousePressed() and dist() hit detection so each 
+        seed could be clicked individually.<br><br>
+        <span class="label">Reflections on rule changes:</span> The original lose condition was only 
+        failing to grow a flower  weeds did not count against survival. This was changed so that any 
+        unclicked seed costs a life, which made every seed feel important rather than optional.<br><br>
+        <span class="label">Evidence of revision:</span> The timer started fixed at 12 seconds, was 
+        later made variable per round, then locked back to 10 seconds with a -0.5s reduction per round 
+        after feedback that the difficulty curve felt uneven. The number of seeds also increases every 
+        two rounds to compound the pressure gradually.
+    </p>
+</div>
+ 
+<div class="idea">
+    <h2>3. What the System Is About</h2>
+    <p>
+        The system uses a garden as a metaphor for decision-making under pressure. Every seed is an 
+        unknown. The player cannot tell what will grow until they commit to clicking it. The sun is 
+        indifferent; it moves at the same pace regardless of what the player does. The only control 
+        the player has is how quickly they act, not what the outcome will be. As rounds progress, 
+        more seeds appear and less time is available, so the player has to make faster decisions 
+        with the same uncertainty.
+    </p>
+</div>
+ 
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+</body>
+</html>
