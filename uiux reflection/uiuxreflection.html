@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoBloom — Reflections</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+ 
+    h1 {
+        font-size: 42px;
+        color: #5a2d82;
+        margin-bottom: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+ 
+    h2 {
+        font-size: 22px;
+        color: #5a2d82;
+        margin: 0 0 20px 0;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(123, 63, 160, 0.2);
+        padding-bottom: 12px;
+    }
+ 
+    h3 {
+        font-size: 16px;
+        color: #7b3fa0;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin: 24px 0 8px 0;
+    }
+ 
+    .subtitle {
+        font-size: 15px;
+        color: #7b3fa0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+ 
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 36px 32px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 700px;
+        width: 100%;
+        margin-bottom: 28px;
+        box-sizing: border-box;
+    }
+ 
+    p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: #3b2d5f;
+        margin: 0 0 14px 0;
+    }
+ 
+    p:last-child {
+        margin-bottom: 0;
+    }
+ 
+    a.nav-link {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+ 
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+</style>
+</head>
+<body>
+ 
+<h1>GoBloom</h1>
+<p class="subtitle">Reading Reflections</p>
+ 
+<!-- REFLECTION 1 -->
+<div class="card">
+    <h2>Reading Reflection 1</h2>
+ 
+    <p>Norman's argument is simple and a little uncomfortable. Bad design does not confuse people. It blames them. Reading that while thinking about GoBloom wasn't fun, because I realized my system was already doing some of that. But revising the project with that lens also helped me see what was actually working, and what just needed to be communicated better.</p>
+ 
+    <h3>Affordances &amp; Signifiers</h3>
+    <p>The real affordance of GoBloom is that seeds are clickable. That is the whole game. In the first version, nothing on screen told you that. They were small brown ovals sitting in the dirt. They did not react to your cursor. They did not do anything that said, "click me." Someone coming in cold would press a key because the prompt told them to, then stare at five brown dots, with no idea those dots were the point.</p>
+    <p>I fixed this by adding a full instructions screen before round 1. It shows up before the timer ever starts, explains the goal, the scoring, and what happens if you miss a seed. The affordance of the seed did not change, but the signifier did. Norman talks about this gap between what an object can do and how well it communicates that. The instructions screen closed that gap.</p>
+ 
+    <h3>Feedback</h3>
+    <p>When you click a seed, something happens immediately. A flower or a weed grows, the score changes, and indicates that it worked. That part always worked well, and I kept it. Immediate, clear feedback at the point of interaction. I think Norman would approve of that.</p>
+    <p>What was not fine was what happened when a round ended and you missed a seed. The screen just reset. The lives counter dropped. No explanation. I added a next-level transition screen that appears for one second between rounds, showing you the upcoming seed count and time limit. It does not yet tell you that you missed a seed, but it gives the player a moment to breathe and register what just changed before the next round starts. The player at least knows the round ended and a new one is coming. For future iterations, I will add how many seeds the user missed and if they lost a life in the game. That should address the gulf.</p>
+ 
+    <h3>Mapping</h3>
+    <p>Clicking a seed and watching something grow is intuitive. That relationship is direct and strong. The input is given, and you get the output. You click a thing in the ground, and something grows. That logic makes sense even before the instructions tell you to do it.</p>
+    <p>What is less clear is the random outcome. You do not know if your seed will become a flower or a weed until it grows. That confusion is intentional. It is the tension that the game is built on. The instructions screen explains it so the player understands the uncertainty is a rule, not a bug.</p>
+ 
+    <h3>Constraints</h3>
+    <p>Most of the constraints in the original version were invisible. The seeds looked the same whether the round was active or not. The timer had no label. The lives system never explained what caused you to lose one.</p>
+    <p>The instructions screen addresses this directly. Before the player ever starts, they know the rules. They know the seeds are clickable, that the sun is a timer, and that missing seeds costs lives. The constraints are still there, but now the player has a mental model before they encounter them. Norman calls this a conceptual model, and it is one of the most important things a designer can give a user.</p>
+ 
+    <h3>The Biggest Design Weakness</h3>
+    <p>I think the click radius on the seeds may be small. With fast clicking, it's easy to miss. The player clicks a seed, nothing happens, and they do not know if they missed or if the round has not started yet. That is a feedback failure and a mapping failure at the same time. Norman would call it a poor match between the perceived affordance and the actual one. The seed looks bigger than it is clickable.</p>
+ 
+    <h3>Biggest Takeaway</h3>
+    <p>The thing that stuck with me most is the idea that design is always communicating something, whether you intended it to or not. The first version of GoBloom was saying things I never meant to say, that the seeds were decoration. The sun was the background. That the rules were yours to figure out.</p>
+    <p>The revision did not change the game. It changed what the game communicated. And that is the connection to what we discussed at the start of the semester. IxD, at its core, is about changing human behavior. Norman's point is that you do that not through force but through clarity. You make the right action feel obvious. GoBloom is closer to that now. The instructions give the player a model to follow. The transition screen gives them a moment. The feedback is still immediate. The system is still simple.</p>
+    <p>I liked the reading because it was not abstract. Every concept had a specific place in my own project, which made the criticism feel useful rather than academic.</p>
+</div>
+ 
+<!-- REFLECTION 2 -->
+<div class="card">
+    <h2>UI/UX Reflection — Nielsen Heuristics</h2>
+ 
+    <h3>Norman + Nielsen</h3>
+    <p>The heuristic that most closely aligns with Norman's concerns in Chapter 1 is the visibility of system status. Both are circling the same problem from different angles. Norman argues that when a design fails to communicate, the user is left to blame themselves. Nielsen formalizes that into a principle: the system should always keep users informed about what is going on, through appropriate feedback within a reasonable amount of time. The overlap is not incidental. It is the same issue addressed differently. Norman talks about feedback as a sign of good design. Nielsen turns it into a measurable obligation. Where Norman is philosophical about it, Nielsen is diagnostic. Together, they make the same argument: a quiet system has already failed you.</p>
+ 
+    <h3>Challenging My Own Work</h3>
+    <p>The first heuristic my project struggles with is visibility of system status. The time bar at the top of the screen is doing its job, but almost everything else about the system's state is invisible. When a seed gets clicked and a weed grows instead of a flower, the score drops by ten points and that is the entirety of the communication. There is no visual indicator on the seed before you click it, no signal that the outcome is random, no acknowledgment that something went wrong after the fact. The system changed state without notifying you. A player losing lives round after round has no real information about why, just a number getting smaller. That is a status visibility failure.</p>
+ 
+    <h3>Sketchbook Interface Audit</h3>
+    <p>The heuristic my sketchbook clearly violates is the recognition heuristic. And honestly, looking at it now, it is hard to ignore. The homepage has sixteen links. No thumbnail. No description. No indication of what you are about to click into. A visitor landing on that page cold has nothing to go on. And even I, coming back to it after a few days, have to remember what Number 4 was. It is just a list that expects you to know things already.</p>
+    <p>When you land on a sketch page, nothing tells you where you are. No breadcrumb. No counter. No sense of how many sketches exist or which one you are on. You read whatever is on the page, and then you navigate back to the homepage manually and start over. The system does not tell you where you are or where you could go next.</p>
+    <p>User control and freedom break down for the same reason. There is no way to move from one sketch to the next in sequence. Every page is essentially a dead end. You came in from the index, and you have to go back to the index. It has no previous, no next, no flow. The browsing experience is static.</p>
+    <p>The consistency issue is less obvious, but it is there. The first ten links follow a numbered convention, then the rest have descriptive names like Go Bloom and Assessment. There is no visual logic separating sketches, projects, and documentation. They all sit in the same flat list, equally weighted, equally unexplained. A visitor has no way of knowing which links are experiments, which are finished work, and which are text pages.</p>
+ 
+    <h3>The Hardest Heuristic</h3>
+    <p>The hardest heuristic to implement is user control and freedom, and it breaks in different ways across both parts of the project.</p>
+    <p>In GoBloom, adding freedom would break the game. The irreversibility of each click is the tension on which the game is built. If you could undo a seed, the risk disappears. Nielsen says users need a clearly marked emergency exit, but here the exit would empty the room. The constraint is the experience.</p>
+    <p>In the sketchbook, the problem is the opposite. There is too little freedom, and there is no intentional reason for it. Every page is a dead end. You land on Number 6, read it, and your only option is to go back to the homepage and start over. There is no next, no previous, no flow. The game trapped you on purpose. The sketchbook just never thought about what happens after you arrive somewhere.</p>
+    <p>One is a conscious sacrifice. The other is an oversight. Knowing the difference between the two is actually most of the work. I will be working on resolving these issues.</p>
+</div>
+ 
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+ 
+</body>
+</html>
+ 
