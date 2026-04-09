@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interface Audit — Landing Page</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #5a2d82;
+        margin-bottom: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 22px;
+        color: #5a2d82;
+        margin: 0 0 20px 0;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(123, 63, 160, 0.2);
+        padding-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 16px;
+        color: #7b3fa0;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin: 24px 0 8px 0;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        color: #7b3fa0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 36px 32px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 700px;
+        width: 100%;
+        margin-bottom: 28px;
+        box-sizing: border-box;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: #3b2d5f;
+        margin: 0 0 14px 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    a.nav-link {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Interface Audit</h1>
+<p class="subtitle">Landing Page — Vaish's Interactive Sketchbook</p>
+
+<div class="card">
+    <h2>Interface Audit — Landing Page</h2>
+
+    <p>The landing page is the front door to everything. It is the page a visitor sees first, and it is the page that either gives them a way in or does not. Looking at it honestly, it mostly does not.</p>
+
+    <h3>Visibility of System Status</h3>
+    <p>The page tells you one thing: here is a list. That is it. There is no indication of how much work is here, what kind of work it is, or where you are supposed to start. A visitor coming in cold has no sense of whether this is a finished body of work or something still being built. Nothing signals which entry is the most recent. Nothing signals which one matters most.</p>
+    <p>The weakest moment is Go Bloom Final. It is the project the entire semester was building toward. It sits between Go Bloom and Assessment in a flat list with no label, no emphasis, nothing to distinguish it from Number 4. If you do not already know what Go Bloom is, the page will not tell you.</p>
+
+    <h3>Affordances &amp; Signifiers</h3>
+    <p>Every item on the page is a hyperlink. That is the only affordance available. The signifier is the blue underlined link, the same one every website has used since the 1990s. It tells you that you can click. It tells you nothing about what you will find when you do.</p>
+    <p>Number 1 through Number 10 are the clearest example of this problem. Those are not signifiers. They are placeholders. They communicate that there is a sequence. They do not communicate what is in it. A visitor looking at that list has no information to make a decision with. They are just guessing.</p>
+    <p>The named entries are slightly better. MicroProject, Go Bloom Final, UI/UX Reflection — those words gesture toward content. But they sit in the same list, at the same size, with the same visual weight as the numbered entries. Nothing in the interface tells you that Go Bloom Final is the most important thing on the page.</p>
+
+    <h3>Navigation &amp; Mapping</h3>
+    <p>There is no hierarchy here. It is a vertical list and that is the entire navigation system. The structure of the semester — early sketches, project development, final build, written reflection — is completely invisible. The work has a clear arc. The interface presents it as a pile.</p>
+    <p>A visitor has two options: click something and see what it is, or leave. There is no way to orient yourself before you start clicking. No way to understand the scope. No way to navigate with any intention. And once you are inside a page, there is no way to move forward or backward. Every page ends at a dead end. You read it, go back to the homepage, find your place again, and click the next one. That is a lot of friction for something that should feel like flipping through a sketchbook.</p>
+    <p>The moment a user will hesitate most is right at the top of the list. Ten links in a row all called Number something. That is a wall. Most people will click one or two and either figure it out through trial and error or give up entirely.</p>
+
+    <h3>Constraints &amp; Assumptions</h3>
+    <p>The page assumes you already know what this sketchbook is. It assumes you took the class, or know me, or have enough context to understand what MicroIdeas means versus MicroProject versus Project Progress. It was built for people who already have the map. It does not provide the map.</p>
+    <p>What is hidden is almost everything that would make this readable to an outsider. The fact that the numbered entries are weekly sketches. The fact that MicroProject and Go Bloom are different stages of the same project. The fact that UI/UX Reflection is a written critical analysis and not another interactive piece. None of that is on the surface. The interface makes no distinction between types of work at all.</p>
+    <p>What requires guessing is the relationship between entries. Are Number 1 and Go Bloom connected? Is Project Progress a predecessor to Go Bloom Final? Yes to both. But a visitor would never know that from the homepage.</p>
+
+    <h3>Heuristic Violations</h3>
+    <p>The first violation is recognition rather than recall. Every link on this page requires recall. You either already know what Number 7 is or you have to click and find out. There is nothing on the homepage that helps you recognize what you are about to enter. The fix is simple: one line of description under each link. Not a paragraph. Just enough. "Number 1 — first sketch, anxiety and motion" changes the entire experience of that link.</p>
+    <p>The second violation is consistency and standards. The first ten entries follow a numbered system. Then the system breaks completely. MicroIdeas, MicroProject, Project Progress, Go Bloom, Go Bloom Final, Assessment, UI/UX Reflection. Some of those are descriptive, some are project names, one is administrative. There is no consistent logic. A visitor trying to understand the structure of this sketchbook keeps having to reset because the naming keeps shifting under them. Grouping entries into clear categories, even just with a simple header above each group, would fix most of this immediately.</p>
+
+    <h3>Structural Revision Proposal</h3>
+    <p>The first change is visible groupings. Three categories would cover everything on this page: Sketches for Number 1 through 10, Project for MicroIdeas through Go Bloom Final, and Reflections for Assessment and UI/UX Reflection. That one change gives the page a hierarchy it does not currently have and lets a visitor understand the shape of the work before they click anything.</p>
+    <p>The second change is a one-line descriptor on every entry. Permanently visible, not a tooltip. It does not need to be long. "Final game build" or "Week 3 — cozy and flowers" is enough. It solves the recognition problem and removes the guesswork.</p>
+    <p>The third change is sequential navigation inside every page. Right now every page is a dead end that sends you back to the homepage. Adding a simple previous and next link to each page would turn the sketchbook into something you can actually move through. That is the difference between a folder of files and something that reads like a sketchbook.</p>
+</div>
+
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+
+</body>
+</html>
