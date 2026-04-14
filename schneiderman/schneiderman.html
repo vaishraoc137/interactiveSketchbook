@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Rules Reflection</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #5a2d82;
+        margin-bottom: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 22px;
+        color: #5a2d82;
+        margin: 0 0 20px 0;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(123, 63, 160, 0.2);
+        padding-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 16px;
+        color: #7b3fa0;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin: 24px 0 8px 0;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        color: #7b3fa0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 36px 32px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 700px;
+        width: 100%;
+        margin-bottom: 28px;
+        box-sizing: border-box;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: #3b2d5f;
+        margin: 0 0 14px 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    a.nav-link {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Shneiderman's Golden Rules</h1>
+<p class="subtitle">Reflection on GoBloom and the Sketchbook</p>
+
+<div class="card">
+    <h2>Golden Rules Reflection</h2>
+
+    <h3>Which rule feels most absent from your micro-project?</h3>
+    <p>Rule 4: design dialogs to yield closure. GoBloom has no moment that feels finished. A round ends and the screen resets. The game ends and you get a score. Neither of those things feels like a landing. Shneiderman says sequences need a beginning, a middle, and an end, and that the end should actually communicate something. Right now the end of a round just feels like an interruption. The transition screen helped a little. But the game still does not give you a moment to breathe and register that something concluded. You are always mid-process, even when it is over.</p>
+
+    <h3>Which rule would most improve your sketchbook interface?</h3>
+    <p>Rule 8: reduce short-term memory load. That is the root problem with the landing page and it is so obvious once you name it. Sixteen unlabeled links is a direct memory burden. Every time someone visits, they have to reconstruct the sketchbook from scratch because nothing on the page holds the structure for them. Shneiderman says users should not have to remember information from one display to use it on another. My sketchbook asks you to remember what Number 4 was from a previous visit just to decide whether to click it again. One line of description per link would fix most of that. It is such a small change relative to the problem it solves.</p>
+
+    <h3>Which rule is hardest to implement honestly?</h3>
+    <p>Rule 6: permit easy reversal of actions. For the exact reason we already talked about. In GoBloom, reversal would collapse the game. The tension is that you cannot take a click back. Shneiderman says reversibility relieves anxiety and encourages exploration. But GoBloom is built on anxiety. That is the point. Removing it would make the game feel safe in a way that makes it feel pointless. So this rule and my design are in direct conflict and I think my design is right. But I cannot implement the rule without breaking what I made. That is not a failure. It is a tradeoff. Knowing the difference matters.</p>
+
+    <h3>Did any rule contradict how you designed your system originally?</h3>
+    <p>Rule 3 and rule 7 both did, and neither contradiction was intentional. Rule 3 says every user action should have informative feedback. In the original version of GoBloom, clicking a seed and getting a weed was feedback in the visual sense but not in any informative sense. Something happened. The system never told you what it meant for where you stood in the game. Rule 7 says users should feel in control and should not be surprised. The random outcome is a surprise every single time. I designed it that way because I thought unpredictability was interesting, and I still think it is. But Shneiderman would say I designed the surprise without designing the context that makes it feel fair rather than broken. The instructions screen was an attempt to fix that. Telling the player upfront that the outcome is random reframes it as a rule instead of a malfunction. That gap, between a system that keeps you in control and one that just keeps you guessing, is exactly where I needed to do more work.</p>
+</div>
+
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+
+</body>
+</html>
