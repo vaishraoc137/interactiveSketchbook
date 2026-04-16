@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interface System Prototype — Week 1</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #3b2d5f;
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #5a2d82;
+        margin-bottom: 10px;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        font-size: 22px;
+        color: #5a2d82;
+        margin: 0 0 20px 0;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(123, 63, 160, 0.2);
+        padding-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 16px;
+        color: #7b3fa0;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+        margin: 24px 0 8px 0;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        color: #7b3fa0;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 36px 32px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
+        max-width: 700px;
+        width: 100%;
+        margin-bottom: 28px;
+        box-sizing: border-box;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.85;
+        color: #3b2d5f;
+        margin: 0 0 14px 0;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    .figma-btn {
+        display: inline-block;
+        margin-top: 12px;
+        font-size: 15px;
+        color: #7b3fa0;
+        background-color: #f3e6ff;
+        text-decoration: none;
+        padding: 10px 22px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(123, 63, 160, 0.12);
+        transition: all 0.3s ease;
+    }
+
+    .figma-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.2);
+        background-color: #ead6ff;
+    }
+
+    a.nav-link {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 18px;
+        text-decoration: none;
+        color: #7b3fa0;
+        background-color: white;
+        padding: 12px 25px;
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
+        transition: all 0.3s ease;
+    }
+
+    a.nav-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
+        background-color: #f3e6ff;
+    }
+</style>
+</head>
+<body>
+
+<h1>Interface System Prototype</h1>
+<p class="subtitle">Week 1 Iteration: Landing Page</p>
+
+<!-- FIGMA LINK -->
+<div class="card">
+    <h2>Figma Prototype</h2>
+    <p>Mobile and desktop wireframes of the redesigned landing page. Grayscale, structural only. View the full prototype via the link below.</p>
+    <a class="figma-btn" href="https://www.figma.com/design/IKCB1FNdkNgvn1Ia9NbdiW/Interface-System-Prototype--1?node-id=2-28&t=cQgWT9C600OoOyyF-1" target="_blank">View Figma File</a>
+</div>
+
+<!-- STRUCTURAL REFLECTION -->
+<div class="card">
+    <h2>Structural Reflection</h2>
+
+    <h3>What structural decisions I made this week</h3>
+    <p>The thing I kept coming back to from the audit was that the homepage was just a list. Seventeen links, no context, no signal of what any of them were. So the first thing I did was break it into three groups: Sketches for Number 1 through 10, Project for everything from MicroIdeas through Go Bloom Final, and Reflections for the written work. That grouping never existed before. Before this week, Go Bloom Final and Number 3 sat next to each other like they were the same kind of thing. They are not.</p>
+    <p>The second thing was adding a one-line descriptor under every entry. Not on hover, just there, permanently. Before you click anything you can read what it is. That felt like the smallest possible fix with the biggest return.</p>
+    <p>The third thing was sequential navigation. Right now every page ends. You read it and you go back to the homepage and find your place again. The prototype adds a previous and a next so you can actually move through the sketchbook like it is a sketchbook.</p>
+
+    <h3>What changed from the previous version</h3>
+    <p>Everything was flat before. Every link had the same weight, the same size, the same nothing. There was no way to tell that Go Bloom Final was the point of the whole semester, or that the reflection pages were a different kind of work than the numbered sketches. The structure of the semester was invisible. Now it is not.</p>
+
+    <h3>What problem from the audit this addresses</h3>
+    <p>The audit flagged two heuristic violations directly. Recognition rather than recall, and consistency and standards. The descriptors fix the first one. The groupings fix the second. The sequential navigation came out of both the Nielsen and Shneiderman work, the user control problem that kept showing up. None of these changes are aesthetic. They are all structural and all came directly from the diagnostic work.</p>
+
+    <h3>What still feels unresolved</h3>
+    <p>System status is still not really solved. When you are inside a page you still do not know where you are in the sketchbook. You can move forward and backward now, but you cannot tell what section you are in or how far through the work you are. That breadcrumb layer is what I want to tackle next. This week was about giving the homepage a structure. Next week is about making that structure legible from inside the pages too.</p>
+</div>
+
+<a href="../index.html" class="nav-link">Back to Sketchbook</a>
+
+</body>
+</html>
