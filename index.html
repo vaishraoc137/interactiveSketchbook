@@ -3,86 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interaction Sketchbook</title>
+<title>Vaish's Sketchbook</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    h1 {
-        font-size: 42px;
-        color: #5a2d82; /* deep purple */
-        margin-bottom: 40px;
-        letter-spacing: 1px;
-    }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: linear-gradient(160deg, #f9c8e8 0%, #e8d0f8 50%, #c8d8f8 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px 60px;
+  }
 
-    .links {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 20px;
-        width: 80%;
-        max-width: 600px;
-    }
+  .phone {
+    background: linear-gradient(160deg, #f5c0e8 0%, #e5ccf5 60%, #c8d4f5 100%);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 360px;
+    padding: 28px 20px 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 
-    a {
-        text-decoration: none;
-        background-color: white;
-        color: #7b3fa0; /* purple */
-        padding: 20px;
-        text-align: center;
-        border-radius: 16px;
-        font-weight: 500;
-        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
-        transition: all 0.3s ease;
-    }
+  /* Header */
+  .site-header {
+    padding: 14px 16px 12px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
 
-    a:hover {
-        background-color: #f3e6ff;
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
-    }
+  .site-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #2a1a6e;
+    letter-spacing: 0.3px;
+  }
+
+  .site-sub {
+    font-size: 13px;
+    color: #2a1a6e;
+    margin-top: 3px;
+  }
+
+  /* Featured link */
+  .featured {
+    padding: 18px 16px;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+  .featured a {
+    font-size: 17px;
+    font-weight: 700;
+    color: #2a1a6e;
+    text-decoration: none;
+  }
+
+  .featured a:hover { color: #7b3fa0; }
+
+  /* Section group */
+  .section-group { margin-bottom: 8px; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0 8px;
+    border-bottom: 1.5px solid rgba(90, 111, 214, 0.3);
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #2a1a6e;
+  }
+
+  .section-toggle {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #7b3fa0;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+  }
+
+  .section-group.collapsed .section-toggle {
+    transform: rotate(180deg);
+  }
+
+  .section-items {
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    max-height: 600px;
+  }
+
+  .section-group.collapsed .section-items {
+    max-height: 0;
+  }
+
+  .section-item {
+    display: block;
+    padding: 13px 0 12px 2px;
+    border-bottom: 1px solid rgba(90, 111, 214, 0.15);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2a1a6e;
+    transition: color 0.2s;
+  }
+
+  .section-item:last-child { border-bottom: none; }
+
+  .section-item:hover { color: #5a6fd6; }
+
+  .section-item .desc {
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    color: #7070a0;
+    margin-top: 2px;
+    text-decoration: none;
+  }
 </style>
-
 </head>
 <body>
 
-<h1>Vaish's Interactive Sketchbook</h1>
+<div class="phone">
 
-<div class="links">
-    <a href="number1/number1.html">Number 1</a>
-    <a href="number2/number2.html">Number 2</a>
-    <a href="number3/number3.html">Number 3</a>
-    <a href="number4/number4.html">Number 4</a>
-    <a href="number5/number5.html">Number 5</a>
-    <a href="number6/number6.html">Number 6</a>
-    <a href="number7/number7.html">Number 7</a>
-    <a href="number8/number8.html">Number 8</a>
-    <a href="number9/number9.html">Number 9</a>
-    <a href="number10/number10.html">Number 10</a>
-    <a href="micro ideas/microideas.html">MicroIdeas</a>
-    <a href="micro project/microproject.html">MicroProject</a>
-    <a href="step1/step1.html">Project Progress</a>
-    <a href="go bloom/gobloom.html">Go Bloom</a>
-    <a href="go bloom final/gobloomfinal.html">Go Bloom Final</a>
-    <a href="assessment/assessment.html">Assessment</a> 
-    <a href="uiux reflection/uiuxreflection.html">UI/UX Reflection</a>
-    <a href="audit/audit.html">Audit</a>
-    <a href="schneiderman/schneiderman.html">Schneiderman Reflection</a>
-    <a href="interface/interface.html">Interface Design</a>
-    <a href="interface2/interface2.html">Interface Design #2</a>
-    <a href="interface3/interface3.html">Interface Design #3</a>
-    <a href="interfacefin/interfacefin.html">Interface Design System</a>
-    <a href="assessmentfin/assessmentfin.html">Assessment Final</a>
-    
+  <!-- Header -->
+  <div class="site-header">
+    <div class="site-title">Vaish's Sketchbook</div>
+    <div class="site-sub">1xD Spring 2026</div>
+  </div>
+
+  <!-- Featured -->
+  <div class="featured">
+    <a href="go bloom final/gobloomfinal.html">Go Bloom (Final Project)</a>
+  </div>
+
+  <!-- SKETCHES -->
+  <div class="section-group" id="sketches">
+    <div class="section-header" onclick="toggle('sketches')">
+      <span class="section-label">Sketches</span>
+      <div class="section-toggle">&#8679;</div>
+    </div>
+    <div class="section-items">
+      <a class="section-item" href="number1/number1.html">Anxiety<span class="desc">Sketch No. 1</span></a>
+      <a class="section-item" href="number2/number2.html">Cozy<span class="desc">Sketch No. 2</span></a>
+      <a class="section-item" href="number3/number3.html">Happy<span class="desc">Sketch No. 3</span></a>
+      <a class="section-item" href="number4/number4.html">Sketch No. 4</a>
+      <a class="section-item" href="number5/number5.html">Sketch No. 5</a>
+      <a class="section-item" href="number6/number6.html">Sketch No. 6</a>
+      <a class="section-item" href="number7/number7.html">Sketch No. 7</a>
+      <a class="section-item" href="number8/number8.html">Sketch No. 8</a>
+      <a class="section-item" href="number9/number9.html">Sketch No. 9</a>
+      <a class="section-item" href="number10/number10.html">Sketch No. 10</a>
+    </div>
+  </div>
+
+  <!-- PROJECT -->
+  <div class="section-group" id="project">
+    <div class="section-header" onclick="toggle('project')">
+      <span class="section-label">Project</span>
+      <div class="section-toggle">&#8679;</div>
+    </div>
+    <div class="section-items">
+      <a class="section-item" href="micro ideas/microideas.html">Micro Ideas<span class="desc">Ideation &amp; concepts</span></a>
+      <a class="section-item" href="micro project/microproject.html">Micro Project<span class="desc">Interactive system</span></a>
+      <a class="section-item" href="go bloom/gobloom.html">Go Bloom<span class="desc">Final project development</span></a>
+      <a class="section-item" href="step1/step1.html">Project Progress<span class="desc">Progress reports</span></a>
+      <a class="section-item" href="interfacefin/interfacefin.html">Interface Design System<span class="desc">Final interface system</span></a>
+    </div>
+  </div>
+
+  <!-- REFLECTIONS -->
+  <div class="section-group" id="reflections">
+    <div class="section-header" onclick="toggle('reflections')">
+      <span class="section-label">Reflections</span>
+      <div class="section-toggle">&#8679;</div>
+    </div>
+    <div class="section-items">
+      <a class="section-item" href="uiux reflection/uiuxreflection.html">UI/UX Reflection<span class="desc">Design thinking &amp; process</span></a>
+      <a class="section-item" href="audit/audit.html">Audit<span class="desc">Sketchbook audit</span></a>
+      <a class="section-item" href="schneiderman/schneiderman.html">Shneiderman Reflection<span class="desc">Golden Rules analysis</span></a>
+      <a class="section-item" href="interface/interface.html">Interface Design<span class="desc">Week 1 exploration</span></a>
+      <a class="section-item" href="interface2/interface2.html">Interface Design No. 2<span class="desc">Week 2 exploration</span></a>
+      <a class="section-item" href="interface3/interface3.html">Interface Design No. 3<span class="desc">Week 3 exploration</span></a>
+      <a class="section-item" href="assessment/assessment.html">Assessment<span class="desc">Mid-semester self assessment</span></a>
+      <a class="section-item" href="assessmentfin/assessmentfin.html">Assessment Final<span class="desc">End of semester self assessment</span></a>
+    </div>
+  </div>
+
 </div>
+
+<script>
+  function toggle(id) {
+    document.getElementById(id).classList.toggle('collapsed');
+  }
+</script>
 
 </body>
 </html>
