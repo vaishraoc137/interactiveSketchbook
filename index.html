@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vaish's Sketchbook</title>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: linear-gradient(160deg, #ffd6ec 0%, #ecdeff 55%, #d4e0ff 100%);
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(150deg, #ffd6ec 0%, #ecdeff 55%, #d4e0ff 100%);
     min-height: 100vh;
   }
 
@@ -19,95 +20,163 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 48px;
+    padding: 24px 64px;
+    max-width: 1000px;
+    margin: 0 auto;
   }
 
   .nav-logo {
-    font-size: 13px;
-    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
     color: #5a2d82;
-    letter-spacing: 0.5px;
   }
 
   .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 32px;
+    align-items: center;
   }
 
   .nav-links a {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
     color: #7b3fa0;
     text-decoration: none;
+    letter-spacing: 0.3px;
     transition: color 0.2s;
   }
 
   .nav-links a:hover { color: #2a1a6e; }
 
+  .nav-links a.highlight {
+    background: rgba(123, 63, 160, 0.1);
+    color: #5a2d82;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .nav-links a.highlight:hover {
+    background: rgba(123, 63, 160, 0.18);
+    color: #2a1a6e;
+  }
+
   /* ── Main container ── */
   .container {
-    max-width: 760px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 20px 48px 80px;
+    padding: 12px 64px 80px;
   }
 
   /* ── Site title ── */
   .site-title {
-    font-size: 28px;
-    font-weight: 800;
+    font-family: 'BBH Hegarty', sans-serif;
+    font-size: 42px;
+    font-weight: 400;
     color: #2a1a6e;
-    margin-bottom: 40px;
-    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+  }
+
+  .site-title .hegarty {
+    color: #7b3fa0;
+  }
+
+  .site-tagline {
+    font-size: 13px;
+    font-weight: 300;
+    color: #7b3fa0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    opacity: 0.7;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 40px rgba(123, 63, 160, 0.1);
+    padding: 40px 48px;
   }
 
   /* ── Two column grid ── */
   .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 60px;
+    grid-template-columns: 55fr 45fr;
+    gap: 0;
+  }
+
+  .col-left {
+    padding-right: 48px;
+    border-right: 1px solid rgba(123, 63, 160, 0.12);
+  }
+
+  .col-right {
+    padding-left: 48px;
   }
 
   /* ── Section ── */
-  .section { margin-bottom: 36px; }
+  .section { margin-bottom: 40px; }
+  .section:last-child { margin-bottom: 0; }
 
   .section-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #2a1a6e;
-    padding-bottom: 10px;
-    border-bottom: 1.5px solid rgba(90, 63, 160, 0.2);
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(90, 63, 160, 0.15);
     margin-bottom: 4px;
+    display: block;
   }
 
   /* ── Item ── */
   .item {
     display: block;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(90, 63, 160, 0.1);
+    padding: 11px 10px 11px 12px;
+    border-bottom: 1px solid rgba(90, 63, 160, 0.07);
     text-decoration: none;
-    transition: background 0.15s;
+    border-left: 2px solid transparent;
+    transition: border-left-color 0.2s, background 0.2s;
+    border-radius: 0 6px 6px 0;
+    margin-left: -12px;
   }
 
   .item:last-child { border-bottom: none; }
 
+  .item:hover {
+    border-left-color: #c084fc;
+    background: rgba(192, 132, 252, 0.06);
+  }
+
   .item-name {
     font-size: 14px;
-    font-weight: 600;
-    color: #5a2d82;
+    font-weight: 500;
+    color: #2a1a6e;
     display: block;
     margin-bottom: 2px;
     transition: color 0.2s;
   }
 
-  .item:hover .item-name { color: #2a1a6e; }
+  .item:hover .item-name { color: #5a2d82; }
 
   .item-desc {
-    font-size: 12px;
+    font-size: 11px;
+    font-weight: 300;
     color: #7b3fa0;
-    opacity: 0.65;
+    opacity: 0.6;
     display: block;
+    letter-spacing: 0.2px;
   }
 </style>
 </head>
@@ -115,130 +184,138 @@
 
 <!-- Nav -->
 <nav>
-  <span class="nav-logo">Vaish's Sketchbook</span>
+  <span class="nav-logo">IxD · Spring 2026</span>
   <div class="nav-links">
     <a href="#">Home</a>
-    <a href="go bloom final/gobloomfinal.html">Game</a>
-    <a href="assessment/assessment.html">Assessment</a>
+    <a href="go bloom final/gobloomfinal.html" class="highlight">Go Bloom ↗</a>
+    <a href="assessmentfin/assessmentfin.html">Assessment</a>
   </div>
 </nav>
 
 <!-- Main -->
 <div class="container">
-  <div class="site-title">Vaish's Sketchbook</div>
 
-  <div class="grid">
+  <div class="site-title">Vaish's <span class="hegarty">Sketchbook</span></div>
+  <div class="site-tagline">Interaction Design &nbsp;·&nbsp; IxD Spring 2026</div>
 
-    <!-- Left column -->
-    <div>
-      <div class="section">
-        <div class="section-label">Sketches</div>
-        <a class="item" href="number1/number1.html">
-          <span class="item-name">Anxiety</span>
-          <span class="item-desc">First sketch, anxiety and motion</span>
-        </a>
-        <a class="item" href="number2/number2.html">
-          <span class="item-name">Number 2</span>
-          <span class="item-desc">Coziness, flowers</span>
-        </a>
-        <a class="item" href="number3/number3.html">
-          <span class="item-name">Number 3</span>
-          <span class="item-desc">Coziness, flowers</span>
-        </a>
-        <a class="item" href="number4/number4.html">
-          <span class="item-name">Number 4</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
-        <a class="item" href="number5/number5.html">
-          <span class="item-name">Number 5</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
-        <a class="item" href="number6/number6.html">
-          <span class="item-name">Number 6</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
-        <a class="item" href="number7/number7.html">
-          <span class="item-name">Number 7</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
-        <a class="item" href="number8/number8.html">
-          <span class="item-name">Number 8</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
-        <a class="item" href="number9/number9.html">
-          <span class="item-name">Number 9</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
-        <a class="item" href="number10/number10.html">
-          <span class="item-name">Number 10</span>
-          <span class="item-desc">Interactive exploration</span>
-        </a>
+  <div class="card">
+    <div class="grid">
+
+      <!-- Left column -->
+      <div class="col-left">
+
+        <div class="section">
+          <div class="section-label">Sketches</div>
+          <a class="item" href="number1/number1.html">
+            <span class="item-name">Anxiety</span>
+            <span class="item-desc">First sketch, anxiety and motion</span>
+          </a>
+          <a class="item" href="number2/number2.html">
+            <span class="item-name">Number 2</span>
+            <span class="item-desc">Coziness, flowers</span>
+          </a>
+          <a class="item" href="number3/number3.html">
+            <span class="item-name">Number 3</span>
+            <span class="item-desc">Coziness, flowers</span>
+          </a>
+          <a class="item" href="number4/number4.html">
+            <span class="item-name">Number 4</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+          <a class="item" href="number5/number5.html">
+            <span class="item-name">Number 5</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+          <a class="item" href="number6/number6.html">
+            <span class="item-name">Number 6</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+          <a class="item" href="number7/number7.html">
+            <span class="item-name">Number 7</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+          <a class="item" href="number8/number8.html">
+            <span class="item-name">Number 8</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+          <a class="item" href="number9/number9.html">
+            <span class="item-name">Number 9</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+          <a class="item" href="number10/number10.html">
+            <span class="item-name">Number 10</span>
+            <span class="item-desc">Interactive exploration</span>
+          </a>
+        </div>
+
+        <div class="section">
+          <div class="section-label">Project</div>
+          <a class="item" href="micro ideas/microideas.html">
+            <span class="item-name">Micro Ideas</span>
+            <span class="item-desc">Early ideation</span>
+          </a>
+          <a class="item" href="micro project/microproject.html">
+            <span class="item-name">Micro Project</span>
+            <span class="item-desc">Project documentation</span>
+          </a>
+          <a class="item" href="go bloom/gobloom.html">
+            <span class="item-name">Go Bloom</span>
+            <span class="item-desc">Final game build</span>
+          </a>
+          <a class="item" href="step1/step1.html">
+            <span class="item-name">Project Progress</span>
+            <span class="item-desc">Progress reports</span>
+          </a>
+          <a class="item" href="interfacefin/interfacefin.html">
+            <span class="item-name">Interface Design System</span>
+            <span class="item-desc">Final interface system</span>
+          </a>
+        </div>
+
       </div>
 
-      <div class="section">
-        <div class="section-label">Project</div>
-        <a class="item" href="micro ideas/microideas.html">
-          <span class="item-name">Micro Ideas</span>
-          <span class="item-desc">Early ideation</span>
-        </a>
-        <a class="item" href="micro project/microproject.html">
-          <span class="item-name">Micro Project</span>
-          <span class="item-desc">Project documentation</span>
-        </a>
-        <a class="item" href="go bloom/gobloom.html">
-          <span class="item-name">Go Bloom</span>
-          <span class="item-desc">Final game build</span>
-        </a>
-        <a class="item" href="step1/step1.html">
-          <span class="item-name">Project Progress</span>
-          <span class="item-desc">Progress reports</span>
-        </a>
-        <a class="item" href="interfacefin/interfacefin.html">
-          <span class="item-name">Interface Design System</span>
-          <span class="item-desc">Final interface system</span>
-        </a>
+      <!-- Right column -->
+      <div class="col-right">
+
+        <div class="section">
+          <div class="section-label">Reflections</div>
+          <a class="item" href="uiux reflection/uiuxreflection.html">
+            <span class="item-name">UI/UX Reflections</span>
+            <span class="item-desc">Nielsen heuristics</span>
+          </a>
+          <a class="item" href="audit/audit.html">
+            <span class="item-name">Interface Audit</span>
+            <span class="item-desc">Landing page audit</span>
+          </a>
+          <a class="item" href="schneiderman/schneiderman.html">
+            <span class="item-name">Golden Rules</span>
+            <span class="item-desc">Shneiderman reflections</span>
+          </a>
+          <a class="item" href="interface/interface.html">
+            <span class="item-name">Interface Design</span>
+            <span class="item-desc">Week 1 exploration</span>
+          </a>
+          <a class="item" href="interface2/interface2.html">
+            <span class="item-name">Interface Design No. 2</span>
+            <span class="item-desc">Week 2 exploration</span>
+          </a>
+          <a class="item" href="interface3/interface3.html">
+            <span class="item-name">Interface Design No. 3</span>
+            <span class="item-desc">Week 3 exploration</span>
+          </a>
+          <a class="item" href="assessment/assessment.html">
+            <span class="item-name">Assessment</span>
+            <span class="item-desc">Mid-semester self assessment</span>
+          </a>
+          <a class="item" href="assessmentfin/assessmentfin.html">
+            <span class="item-name">Assessment Final</span>
+            <span class="item-desc">End of semester self assessment</span>
+          </a>
+        </div>
+
       </div>
+
     </div>
-
-    <!-- Right column -->
-    <div>
-      <div class="section">
-        <div class="section-label">Reflections</div>
-        <a class="item" href="uiux reflection/uiuxreflection.html">
-          <span class="item-name">UI/UX Reflections</span>
-          <span class="item-desc">Nielsen heuristics</span>
-        </a>
-        <a class="item" href="audit/audit.html">
-          <span class="item-name">Interface Audit</span>
-          <span class="item-desc">Landing page audit</span>
-        </a>
-        <a class="item" href="schneiderman/schneiderman.html">
-          <span class="item-name">Golden Rules</span>
-          <span class="item-desc">Shneiderman reflections</span>
-        </a>
-        <a class="item" href="interface/interface.html">
-          <span class="item-name">Interface Design</span>
-          <span class="item-desc">Week 1 exploration</span>
-        </a>
-        <a class="item" href="interface2/interface2.html">
-          <span class="item-name">Interface Design No. 2</span>
-          <span class="item-desc">Week 2 exploration</span>
-        </a>
-        <a class="item" href="interface3/interface3.html">
-          <span class="item-name">Interface Design No. 3</span>
-          <span class="item-desc">Week 3 exploration</span>
-        </a>
-        <a class="item" href="assessment/assessment.html">
-          <span class="item-name">GoBloom Assessment</span>
-          <span class="item-desc">Mid-semester self assessment</span>
-        </a>
-        <a class="item" href="assessmentfin/assessmentfin.html">
-          <span class="item-name">Assessment Final</span>
-          <span class="item-desc">End of semester self assessment</span>
-        </a>
-      </div>
-    </div>
-
   </div>
 </div>
 
