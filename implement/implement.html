@@ -3,198 +3,315 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoBloom — Self Assessment</title>
+<title>Interface Implementation — Progress Snapshot</title>
+<link href="https://fonts.googleapis.com/css2?family=BBH+Hegarty&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        background: linear-gradient(135deg, #ffd6ec, #e6ccff);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 40px 20px;
-        color: #3b2d5f;
-    }
- 
-    h1 {
-        font-size: 42px;
-        color: #5a2d82;
-        margin-bottom: 40px;
-        text-align: center;
-        letter-spacing: 1px;
-    }
- 
-    .card {
-        background-color: rgba(255, 255, 255, 0.9);
-        padding: 30px 25px;
-        border-radius: 20px;
-        box-shadow: 0 10px 25px rgba(123, 63, 160, 0.15);
-        max-width: 700px;
-        width: 100%;
-    }
- 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-    }
- 
-    thead th {
-        font-size: 13px;
-        font-weight: bold;
-        color: #5a2d82;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        padding: 10px 14px;
-        border-bottom: 2px solid rgba(123, 63, 160, 0.2);
-        text-align: left;
-    }
- 
-    thead th:last-child { text-align: center; }
- 
-    tbody tr {
-        border-bottom: 1px solid rgba(123, 63, 160, 0.1);
-    }
- 
-    tbody tr:last-child { border-bottom: none; }
- 
-    tbody td {
-        padding: 14px;
-        font-size: 15px;
-        vertical-align: middle;
-    }
- 
-    tbody td:first-child {
-        color: #5a2d82;
-        font-weight: bold;
-        width: 36px;
-        text-align: center;
-    }
- 
-    tbody td:nth-child(2) { color: #3b2d5f; }
- 
-    tbody td:nth-child(3) {
-        color: #7b3fa0;
-        font-size: 13px;
-        text-align: center;
-        white-space: nowrap;
-    }
- 
-    tbody td:last-child {
-        text-align: center;
-        width: 80px;
-        font-weight: bold;
-        color: #5a2d82;
-    }
- 
-    tfoot td {
-        padding: 16px 14px 4px;
-        font-size: 15px;
-        font-weight: bold;
-        color: #5a2d82;
-        border-top: 2px solid rgba(123, 63, 160, 0.2);
-    }
- 
-    tfoot td:last-child {
-        text-align: center;
-        font-size: 20px;
-    }
- 
-    a.nav-link {
-        margin-top: 30px;
-        font-size: 18px;
-        text-decoration: none;
-        color: #7b3fa0;
-        background-color: white;
-        padding: 12px 25px;
-        border-radius: 12px;
-        box-shadow: 0 8px 20px rgba(123, 63, 160, 0.15);
-        transition: all 0.3s ease;
-    }
- 
-    a.nav-link:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 12px 30px rgba(123, 63, 160, 0.25);
-        background-color: #f3e6ff;
-    }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(150deg, #ffd6ec 0%, #ecdeff 55%, #d4e0ff 100%);
+    min-height: 100vh;
+    color: #3b2d5f;
+    padding: 40px 20px 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Header ── */
+  .page-header {
+    max-width: 780px;
+    width: 100%;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #7b3fa0;
+    opacity: 0.7;
+    margin-bottom: 14px;
+  }
+
+  .page-title {
+    font-family: 'BBH Hegarty', sans-serif;
+    font-size: clamp(28px, 5vw, 44px);
+    color: #2a1a6e;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  .page-title span { color: #7b3fa0; }
+
+  .page-sub {
+    font-size: 13px;
+    font-weight: 300;
+    color: #7b3fa0;
+    letter-spacing: 1px;
+    opacity: 0.7;
+  }
+
+  /* ── Cards ── */
+  .card {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.8);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(123,63,160,0.1);
+    max-width: 780px;
+    width: 100%;
+    padding: 36px 40px;
+    margin-bottom: 24px;
+  }
+
+  .card-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #2a1a6e;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(123,63,160,0.12);
+  }
+
+  /* ── Implementation state ── */
+  .impl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  @media (max-width: 560px) {
+    .impl-grid { grid-template-columns: 1fr; }
+    .card { padding: 24px 20px; }
+  }
+
+  .impl-item {
+    background: rgba(243,230,255,0.4);
+    border-radius: 12px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .impl-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #7b3fa0;
+    opacity: 0.7;
+  }
+
+  .impl-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5a2d82;
+    text-decoration: none;
+    word-break: break-all;
+    transition: color 0.2s;
+  }
+
+  .impl-link:hover { color: #2a1a6e; }
+
+  .screenshot-box {
+    background: rgba(243,230,255,0.3);
+    border-radius: 12px;
+    border: 1px dashed rgba(123,63,160,0.2);
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #7b3fa0;
+    opacity: 0.6;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: default;
+  }
+
+  .screenshot-box .icon { font-size: 28px; }
+
+  /* ── Prose sections ── */
+  .prose { display: flex; flex-direction: column; gap: 18px; }
+
+  .prose p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #3b2d5f;
+    font-weight: 300;
+  }
+
+  .prose p strong {
+    font-weight: 600;
+    color: #5a2d82;
+  }
+
+  /* ── Challenge list ── */
+  .challenge-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .challenge-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(123,63,160,0.08);
+  }
+
+  .challenge-item:last-child { border-bottom: none; }
+
+  .challenge-q {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #c084fc;
+    min-width: 160px;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .challenge-a {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #3b2d5f;
+    font-weight: 400;
+  }
+
+  @media (max-width: 560px) {
+    .challenge-item { flex-direction: column; gap: 6px; }
+    .challenge-q { min-width: unset; }
+  }
+
+  /* ── Next steps ── */
+  .steps-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .step-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: rgba(243,230,255,0.35);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+
+  .step-num {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #c084fc, #7b3fa0);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .step-text {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #3b2d5f;
+  }
+
+  .step-text strong {
+    font-weight: 600;
+    color: #5a2d82;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* ── Nav ── */
+  .nav-link {
+    margin-top: 16px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #7b3fa0;
+    background-color: white;
+    padding: 12px 28px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(123,63,160,0.12);
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(123,63,160,0.22);
+    background-color: #f3e6ff;
+  }
 </style>
 </head>
 <body>
- 
-<h1>GoBloom — Self Assessment</h1>
- 
+
+<!-- Header -->
+<div class="page-header">
+  <p class="eyebrow">IxD Spring 2026 · Vaish's Sketchbook</p>
+  <h1 class="page-title">Interface Implementation<br><span>Progress Snapshot</span></h1>
+  <p class="page-sub">HTML/CSS Translation · Figma to Code</p>
+</div>
+
+<!-- 1. Current Implementation State -->
 <div class="card">
-    <table>
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Criterion</th>
-                <th>Max</th>
-                <th>Score</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Core Rule &amp; System Clarity</td>
-                <td>20 pts</td>
-                <td>19</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>State Progression</td>
-                <td>15 pts</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Interaction &amp; Evolution</td>
-                <td>15 pts</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Iterative Development</td>
-                <td>15 pts</td>
-                <td>14</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Documentation &amp; Logging</td>
-                <td>15 pts</td>
-                <td>15</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Risk &amp; Experimentation</td>
-                <td>10 pts</td>
-                <td>9</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Participation &amp; Critique Engagement</td>
-                <td>10 pts</td>
-                <td>10</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="3">Total</td>
-                <td>96 / 100</td>
-            </tr>
-        </tfoot>
-    </table>
+  <div class="card-title">01 — Current Implementation State</div>
+  <div class="impl-grid">
+    <div class="impl-item">
+      <span class="impl-label">Live Sketchbook</span>
+      <a class="impl-link" href="../index.html">vaish-sketchbook / index.html →</a>
+    </div>
+    <div class="impl-item">
+      <span class="impl-label">Figma File</span>
+      <a class="impl-link" href="https://www.figma.com/design/mQAJkOOcrd2B7Zbi8O2yIh/Interface-System-Design?node-id=0-1&m=dev" target="_blank">View Figma prototype →</a>
+    </div>
+  </div>
 </div>
- 
-<div class="card" style="margin-top: 28px; max-width: 700px;">
-    <p style="font-size: 15px; line-height: 1.8; color: #3b2d5f;">
-        Thank you Prof. Oakley and my fellow designers for all the support and feedback throughout this project.  
-        Every critique, comment, and conversation pushed me to think more carefully about my work and approach problems in new ways. 
-        Thank you for being a part of my learning journey.
+
+<!-- 2. Structural Status -->
+<div class="card">
+  <div class="card-title">02 — Structural Status</div>
+  <div class="prose">
+    <p>
+      The desktop layout is mostly there. The two-column grid, nav bar, frosted glass card, and hover states are all working, and the BBH Hegarty font loads correctly. The hierarchy feels readable and all the links go where they should. Mobile is built but still rough around the edges. Spacing is tight and a few items clip on smaller screens. The Figma grouping into Sketches, Project, and Reflections translated well, and the gradient background looks consistent between the mockup and the browser. Where things break is in the details. The frosted glass flattens out in Safari, the right column feels a little sparse at wider viewport widths, and BBH Hegarty loses some of its character at small sizes in a way it did not in Figma.
     </p>
+  </div>
 </div>
- 
-<a href="../index.html" class="nav-link">Back to Sketchbook</a>
- 
+
+<!-- 3. Translation Challenges -->
+<div class="card">
+  <div class="card-title">03 — Translation Challenges</div>
+  <div class="prose">
+    <p>
+      The biggest thing I did not expect was how much Figma was quietly doing for me. The frosted glass card felt like one decision in the mockup. In CSS it became four or five things that all need to work together, and it still behaves differently in Chrome versus Safari. More broadly, Figma holds things exactly where you put them. A browser flows. Every visual grouping that felt obvious in the frame had to be deliberately reconstructed in markup, and the mobile layout is where that gap showed up most. What looked clean in Figma had to be rebuilt from scratch rather than just scaled down.
+    </p>
+  </div>
+</div>
+
+<!-- 4. Next Steps -->
+<div class="card">
+  <div class="card-title">04 — Next Steps</div>
+  <div class="prose">
+    <p>
+      The main focus for the final week is the mobile layout. It needs real device testing, not just browser dev tools, and the spacing issues need fixing before submission. After that, swapping in real screenshots, writing proper descriptors for sketches 4 through 10, and a quick cross-browser check. Last thing is making sure all the assessment pages link correctly from the index.
+    </p>
+  </div>
+</div>
+
+<a href="../index.html" class="nav-link">← Back to Sketchbook</a>
+
 </body>
 </html>
- 
