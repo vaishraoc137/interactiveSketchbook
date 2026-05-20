@@ -108,20 +108,25 @@
     padding: 40px 48px;
   }
 
-  /* ── Two column grid ── */
+  /* ── Three column grid ── */
   .grid {
     display: grid;
-    grid-template-columns: 55fr 45fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 0;
   }
 
   .col-left {
-    padding-right: 48px;
+    padding-right: 40px;
+    border-right: 1px solid rgba(123, 63, 160, 0.12);
+  }
+
+  .col-mid {
+    padding: 0 40px;
     border-right: 1px solid rgba(123, 63, 160, 0.12);
   }
 
   .col-right {
-    padding-left: 48px;
+    padding-left: 40px;
   }
 
   /* ── Section ── */
@@ -178,6 +183,50 @@
     display: block;
     letter-spacing: 0.2px;
   }
+
+  /* ── Mobile ── */
+  @media (max-width: 700px) {
+    nav {
+      padding: 18px 24px;
+    }
+
+    .nav-logo { font-size: 11px; }
+
+    .nav-links { gap: 16px; }
+
+    .nav-links a { font-size: 12px; }
+
+    .container {
+      padding: 12px 20px 60px;
+    }
+
+    .site-title { font-size: 28px; }
+
+    .site-tagline { margin-bottom: 28px; }
+
+    .card { padding: 24px 20px; }
+
+    .grid {
+      grid-template-columns: 1fr;
+    }
+
+    .col-left {
+      padding-right: 0;
+      padding-bottom: 32px;
+      border-right: none;
+      border-bottom: 1px solid rgba(123, 63, 160, 0.12);
+      margin-bottom: 32px;
+    }
+
+    .col-mid {
+      padding: 0 0 32px;
+      border-right: none;
+      border-bottom: 1px solid rgba(123, 63, 160, 0.12);
+      margin-bottom: 32px;
+    }
+
+    .col-right { padding-left: 0; }
+  }
 </style>
 </head>
 <body>
@@ -201,9 +250,8 @@
   <div class="card">
     <div class="grid">
 
-      <!-- Left column -->
+      <!-- Left column: Sketches -->
       <div class="col-left">
-
         <div class="section">
           <div class="section-label">Sketches</div>
           <a class="item" href="number1/number1.html">
@@ -247,36 +295,10 @@
             <span class="item-desc">Interactive exploration</span>
           </a>
         </div>
-
-        <div class="section">
-          <div class="section-label">Project</div>
-          <a class="item" href="micro ideas/microideas.html">
-            <span class="item-name">Micro Ideas</span>
-            <span class="item-desc">Early ideation</span>
-          </a>
-          <a class="item" href="micro project/microproject.html">
-            <span class="item-name">Micro Project</span>
-            <span class="item-desc">Project documentation</span>
-          </a>
-          <a class="item" href="go bloom/gobloom.html">
-            <span class="item-name">Go Bloom</span>
-            <span class="item-desc">Final game build</span>
-          </a>
-          <a class="item" href="step1/step1.html">
-            <span class="item-name">Project Progress</span>
-            <span class="item-desc">Progress reports</span>
-          </a>
-          <a class="item" href="interfacefin/interfacefin.html">
-            <span class="item-name">Interface Design System</span>
-            <span class="item-desc">Final interface system</span>
-          </a>
-        </div>
-
       </div>
 
-      <!-- Right column -->
-      <div class="col-right">
-
+      <!-- Middle column: Reflections -->
+      <div class="col-mid">
         <div class="section">
           <div class="section-label">Reflections</div>
           <a class="item" href="uiux reflection/uiuxreflection.html">
@@ -311,12 +333,34 @@
             <span class="item-name">Assessment Final</span>
             <span class="item-desc">End of semester self assessment</span>
           </a>
-          <a class="item" href="implement/implement.html">
-            <span class="item-name">Implementation</span>
-            <span class="item-desc">Implementation details</span>
+        </div>
+      </div>
+
+      <!-- Right column: Project -->
+      <div class="col-right">
+        <div class="section">
+          <div class="section-label">Project</div>
+          <a class="item" href="micro ideas/microideas.html">
+            <span class="item-name">Micro Ideas</span>
+            <span class="item-desc">Early ideation</span>
+          </a>
+          <a class="item" href="micro project/microproject.html">
+            <span class="item-name">Micro Project</span>
+            <span class="item-desc">Project documentation</span>
+          </a>
+          <a class="item" href="go bloom/gobloom.html">
+            <span class="item-name">Go Bloom</span>
+            <span class="item-desc">Final game build</span>
+          </a>
+          <a class="item" href="step1/step1.html">
+            <span class="item-name">Project Progress</span>
+            <span class="item-desc">Progress reports</span>
+          </a>
+          <a class="item" href="interfacefin/interfacefin.html">
+            <span class="item-name">Interface Design System</span>
+            <span class="item-desc">Final interface system</span>
           </a>
         </div>
-
       </div>
 
     </div>
